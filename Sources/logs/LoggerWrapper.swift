@@ -47,11 +47,16 @@ import OpenTelemetryApi
         )
     }
     
-    @objc public func log(message: String, severity: SeverityWrapper) {
-        logger.logRecordBuilder()
+    @objc public func log(message: String, severity: SeverityWrapper, span: SpanWrapper?) {
+        let logBuilder = logger.logRecordBuilder()
             .setTimestamp(Date())
             .setSeverity(Severity(rawValue: severity.rawValue) ?? Severity.debug)
             .setBody(AttributeValue(message))
-            .emit()
+        
+        if let spanContext = span?.span.context {
+            logBuilder.setSpanContext(spanContext)
+        }
+        
+        logBuilder.emit()
     }
 }
