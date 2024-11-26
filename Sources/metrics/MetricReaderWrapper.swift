@@ -5,6 +5,7 @@
 //  Created by Alexis BURGOS on 21/08/2024.
 //
 
+import Foundation
 import OpenTelemetryApi
 import OpenTelemetrySdk
 
