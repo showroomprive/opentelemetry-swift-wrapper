@@ -5,6 +5,7 @@
 //  Created by Alexis BURGOS on 14/08/2024.
 //
 
+import Foundation
 import OpenTelemetryApi
 
 /// `LoggerWrapper` is a class that wraps the `Logger` to expose it to Objective-C code.

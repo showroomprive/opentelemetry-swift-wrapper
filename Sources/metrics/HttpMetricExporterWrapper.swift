@@ -5,6 +5,7 @@
 //  Created by Alexis BURGOS on 19/08/2024.
 //
 
+import Foundation
 import OpenTelemetryProtocolExporterHttp
 
 /// A wrapper class for the `StableOtlpHTTPMetricExporter`, exposing it to Objective-C.
