@@ -25,11 +25,18 @@ import OpenTelemetryProtocolExporterHttp
     /// - Parameter endpoint: The URL string of the endpoint to which metrics will be exported.
     ///
     /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
-    @objc public init(endpoint: String) {
+    @objc public init(endpoint: String, apiKey: String) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
-        self.httpMetricExporter = StableOtlpHTTPMetricExporter(endpoint: endpointURL)
+        guard !apiKey.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            fatalError("API key is missing or empty")
+        }
+        
+        self.httpMetricExporter = StableOtlpHTTPMetricExporter(
+            endpoint: endpointURL,
+            envVarHeaders: [("apiKey", apiKey)]
+        )
     }
 }

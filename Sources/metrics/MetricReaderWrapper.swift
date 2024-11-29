@@ -27,10 +27,11 @@ import OpenTelemetrySdk
     ///
     /// - Note: The export interval is set to 5 seconds.
     @objc public init(
-        metricExporter: HttpMetricExporterWrapper
+        metricExporter: HttpMetricExporterWrapper,
+        scheduleDelay: Double
     ) {
         self.metricReader = StablePeriodicMetricReaderBuilder(exporter: metricExporter.httpMetricExporter)
-            .setInterval(timeInterval: 5)
+            .setInterval(timeInterval: scheduleDelay)
             .build()
     }
 }
