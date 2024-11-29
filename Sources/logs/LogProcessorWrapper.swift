@@ -35,10 +35,10 @@ import OpenTelemetrySdk
     /// Initializes a new instance of `LogProcessorWrapper` with the provided `HttpLogExporterWrapper`.
     ///
     /// - Parameter httpLogExporter: An instance of `HttpLogExporterWrapper` that defines the endpoint for exporting logs.
-    @objc public init(httpLogExporter: HttpLogExporterWrapper) {
+    @objc public init(httpLogExporter: HttpLogExporterWrapper, scheduleDelay: Double) {
         self.logProcessor = BatchLogRecordProcessor(
             logRecordExporter: httpLogExporter.httpLogExporter,
-            scheduleDelay: 5
+            scheduleDelay: scheduleDelay
         )
     }
 }
