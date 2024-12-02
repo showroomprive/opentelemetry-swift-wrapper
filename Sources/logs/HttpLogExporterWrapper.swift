@@ -7,6 +7,7 @@
 
 import Foundation
 import OpenTelemetryProtocolExporterHttp
+import OpenTelemetryProtocolExporterCommon
 
 /// `HttpLogExporterWrapper` is a class that wraps the `OtlpHttpLogExporter` to expose it to Objective-C code.
 ///
@@ -49,7 +50,7 @@ import OpenTelemetryProtocolExporterHttp
         
         self.httpLogExporter = OtlpHttpLogExporter(
             endpoint: endpointURL,
-            envVarHeaders: [("apiKey", apiKey)]
+            config: OtlpConfiguration(headers: [("apiKey", apiKey)])
         )
     }
 }

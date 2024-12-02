@@ -7,6 +7,7 @@
 
 import Foundation
 import OpenTelemetryProtocolExporterHttp
+import OpenTelemetryProtocolExporterCommon
 import StdoutExporter
 
 /// A wrapper class providing access to the OtlpHttpTraceExporter for exporting spans in Objective-C.
@@ -32,7 +33,7 @@ import StdoutExporter
         
         self.httpSpanExporter = OtlpHttpTraceExporter(
             endpoint: endpointURL,
-            envVarHeaders: [("apiKey", apiKey)]
+            config: OtlpConfiguration(headers: [("apiKey", apiKey)])
         )
     }
 }
