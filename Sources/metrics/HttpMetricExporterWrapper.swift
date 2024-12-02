@@ -7,6 +7,7 @@
 
 import Foundation
 import OpenTelemetryProtocolExporterHttp
+import OpenTelemetryProtocolExporterCommon
 
 /// A wrapper class for the `StableOtlpHTTPMetricExporter`, exposing it to Objective-C.
 ///
@@ -36,7 +37,7 @@ import OpenTelemetryProtocolExporterHttp
         
         self.httpMetricExporter = StableOtlpHTTPMetricExporter(
             endpoint: endpointURL,
-            envVarHeaders: [("apiKey", apiKey)]
+            config: OtlpConfiguration(headers: [("apiKey", apiKey)])
         )
     }
 }
