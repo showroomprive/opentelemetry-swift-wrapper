@@ -23,14 +23,20 @@ import StdoutExporter
     /// - Parameter endpoint: The URL string of the HTTP endpoint to export spans to. This endpoint should be configured to receive and process OpenTelemetry span data.
     ///
     /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
-    @objc public init(endpoint: String, headers: NSArray? = nil) {
+    @objc public init(
+        endpoint: String,
+        meterProviderWrapper: MeterProviderWrapper,
+        headers: NSArray? = nil
+    ) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
         self.httpSpanExporter = OtlpHttpTraceExporter(
             endpoint: endpointURL,
-            config: OtlpConfiguration(headers: headers as? [(String,String)])
+            config: OtlpConfiguration(),
+            meterProvider: meterProviderWrapper.meterProvider,
+            envVarHeaders: headers as? [(String, String)]
         )
     }
 }
