@@ -39,18 +39,16 @@ import OpenTelemetryProtocolExporterCommon
     ///
     /// - Parameter endpoint: The string representing the URL of the endpoint to export logs to.
     /// - Important: This initializer will cause a fatal error if the provided endpoint URL is invalid.
-    @objc public init(endpoint: String, apiKey: String) {
+    ///
+    /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
+    @objc public init(endpoint: String, headers: NSArray? = nil) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
-        guard !apiKey.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            fatalError("API key is missing or empty")
-        }
-        
         self.httpLogExporter = OtlpHttpLogExporter(
             endpoint: endpointURL,
-            config: OtlpConfiguration(headers: [("apiKey", apiKey)])
+            config: OtlpConfiguration(headers: headers as? [(String,String)])
         )
     }
 }

@@ -21,19 +21,16 @@ import StdoutExporter
     /// Initializes a new instance of the HttpSpanExporterWrapper with the specified endpoint.
     ///
     /// - Parameter endpoint: The URL string of the HTTP endpoint to export spans to. This endpoint should be configured to receive and process OpenTelemetry span data.
-    ////// - Throws: A fatal error if the provided endpoint string is not a valid URL, preventing the exporter from being initialized correctly.
-    @objc public init(endpoint: String, apiKey: String) {
+    ///
+    /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
+    @objc public init(endpoint: String, headers: NSArray? = nil) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
-        guard !apiKey.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            fatalError("API key is missing or empty")
-        }
-        
         self.httpSpanExporter = OtlpHttpTraceExporter(
             endpoint: endpointURL,
-            config: OtlpConfiguration(headers: [("apiKey", apiKey)])
+            config: OtlpConfiguration(headers: headers as? [(String,String)])
         )
     }
 }
