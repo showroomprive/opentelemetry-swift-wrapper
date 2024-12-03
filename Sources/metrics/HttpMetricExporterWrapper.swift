@@ -26,14 +26,20 @@ import OpenTelemetryProtocolExporterCommon
     /// - Parameter endpoint: The URL string of the endpoint to which metrics will be exported.
     ///
     /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
-    @objc public init(endpoint: String, headers: NSArray? = nil) {
+    @objc public init(
+        endpoint: String,
+        meterProviderWrapper: MeterProviderWrapper,
+        headers: NSArray? = nil
+    ) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
         self.httpMetricExporter = StableOtlpHTTPMetricExporter(
             endpoint: endpointURL,
-            config: OtlpConfiguration(headers: headers as? [(String,String)])
+            config: OtlpConfiguration(),
+            meterProvider: meterProviderWrapper.meterProvider,
+            envVarHeaders: headers as? [(String,String)]
         )
     }
 }
