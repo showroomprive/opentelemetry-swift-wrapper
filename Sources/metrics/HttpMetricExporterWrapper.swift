@@ -29,17 +29,22 @@ import OpenTelemetryProtocolExporterCommon
     @objc public init(
         endpoint: String,
         meterProviderWrapper: MeterProviderWrapper,
-        headers: NSArray? = nil
+        headers: [[String: String]]? = nil
     ) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
+        }
+        
+        let headerTuples = headers?.compactMap { dict -> (String, String)? in
+            guard let key = dict.keys.first, let value = dict.values.first else { return nil }
+            return (key, value)
         }
         
         self.httpMetricExporter = StableOtlpHTTPMetricExporter(
             endpoint: endpointURL,
             config: OtlpConfiguration(),
             //meterProvider: meterProviderWrapper.meterProvider,
-            envVarHeaders: headers as? [(String,String)]
+            envVarHeaders: headerTuples
         )
     }
 }
