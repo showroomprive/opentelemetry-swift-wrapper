@@ -38,7 +38,7 @@ import OpenTelemetryProtocolExporterCommon
         self.httpMetricExporter = StableOtlpHTTPMetricExporter(
             endpoint: endpointURL,
             config: OtlpConfiguration(),
-            meterProvider: meterProviderWrapper.meterProvider,
+            //meterProvider: meterProviderWrapper.meterProvider,
             envVarHeaders: headers as? [(String,String)]
         )
     }
