@@ -43,22 +43,20 @@ import OpenTelemetryProtocolExporterCommon
     /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
     @objc public init(
         endpoint: String,
-        meterProviderWrapper: MeterProviderWrapper,
-        headers: [[String: String]]? = nil
+        headers: NSMutableDictionary? = nil
     ) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
         let headerTuples = headers?.compactMap { dict -> (String, String)? in
-            guard let key = dict.keys.first, let value = dict.values.first else { return nil }
+            guard let key = dict.key as? String, let value = dict.value as? String else { return nil }
             return (key, value)
         }
         
         self.httpLogExporter = OtlpHttpLogExporter(
             endpoint: endpointURL,
             config: OtlpConfiguration(),
-            //meterProvider: meterProviderWrapper.meterProvider,
             envVarHeaders: headerTuples
         )
     }
