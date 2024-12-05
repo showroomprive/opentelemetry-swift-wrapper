@@ -40,7 +40,9 @@ import OpenTelemetryProtocolExporterCommon
         
         self.httpMetricExporter = StableOtlpHTTPMetricExporter(
             endpoint: endpointURL,
-            config: OtlpConfiguration(),
+            config: OtlpConfiguration(
+                headers: headerTuples
+            ),
             envVarHeaders: headerTuples
         )
     }
