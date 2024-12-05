@@ -28,15 +28,14 @@ import OpenTelemetryProtocolExporterCommon
     /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
     @objc public init(
         endpoint: String,
-        headers: NSMutableDictionary? = nil
+        headers: Dictionary<String, String>? = nil
     ) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
         let headerTuples = headers?.compactMap { dict -> (String, String)? in
-            guard let key = dict.key as? String, let value = dict.value as? String else { return nil }
-            return (key, value)
+            return (dict.key, dict.value)
         }
         
         self.httpMetricExporter = StableOtlpHTTPMetricExporter(
