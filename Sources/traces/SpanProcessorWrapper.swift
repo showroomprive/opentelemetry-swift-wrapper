@@ -29,15 +29,15 @@ import OpenTelemetrySdk
     @objc public init(
         httpSpanExporter: HttpSpanExporterWrapper,
         stdOutSpanExporter: StdOutSpanExporterWrapper,
-        scheduleDelay: Double
+        scheduleDelay: Int
     ) {
         let httpSpanProcessor = BatchSpanProcessor(
             spanExporter: httpSpanExporter.httpSpanExporter,
-            scheduleDelay: scheduleDelay
+            scheduleDelay: TimeInterval(scheduleDelay)
         )
         let stdOutSpanProcessor = BatchSpanProcessor(
             spanExporter: stdOutSpanExporter.stdOutExporter,
-            scheduleDelay: scheduleDelay
+            scheduleDelay: TimeInterval(scheduleDelay)
         )
         self.spanProcessor = MultiSpanProcessor(spanProcessors: [httpSpanProcessor, stdOutSpanProcessor])
     }}
