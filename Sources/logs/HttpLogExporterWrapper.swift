@@ -55,7 +55,9 @@ import OpenTelemetryProtocolExporterCommon
         
         self.httpLogExporter = OtlpHttpLogExporter(
             endpoint: endpointURL,
-            config: OtlpConfiguration(),
+            config: OtlpConfiguration(
+                headers: headerTuples
+            ),
             envVarHeaders: headerTuples
         )
     }
