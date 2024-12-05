@@ -7,6 +7,7 @@
 
 import Foundation
 import OpenTelemetryProtocolExporterHttp
+import OpenTelemetryProtocolExporterCommon
 
 /// `HttpLogExporterWrapper` is a class that wraps the `OtlpHttpLogExporter` to expose it to Objective-C code.
 ///
@@ -38,18 +39,26 @@ import OpenTelemetryProtocolExporterHttp
     ///
     /// - Parameter endpoint: The string representing the URL of the endpoint to export logs to.
     /// - Important: This initializer will cause a fatal error if the provided endpoint URL is invalid.
-    @objc public init(endpoint: String, apiKey: String) {
+    ///
+    /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
+    @objc public init(
+        endpoint: String,
+        headers: Dictionary<String, String>? = nil
+    ) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
-        guard !apiKey.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            fatalError("API key is missing or empty")
+        let headerTuples = headers?.compactMap { dict -> (String, String)? in
+            return (dict.key, dict.value)
         }
         
         self.httpLogExporter = OtlpHttpLogExporter(
             endpoint: endpointURL,
-            envVarHeaders: [("apiKey", apiKey)]
+            config: OtlpConfiguration(
+                headers: headerTuples
+            ),
+            envVarHeaders: headerTuples
         )
     }
 }

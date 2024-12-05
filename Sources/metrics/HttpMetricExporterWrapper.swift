@@ -7,6 +7,7 @@
 
 import Foundation
 import OpenTelemetryProtocolExporterHttp
+import OpenTelemetryProtocolExporterCommon
 
 /// A wrapper class for the `StableOtlpHTTPMetricExporter`, exposing it to Objective-C.
 ///
@@ -25,18 +26,24 @@ import OpenTelemetryProtocolExporterHttp
     /// - Parameter endpoint: The URL string of the endpoint to which metrics will be exported.
     ///
     /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
-    @objc public init(endpoint: String, apiKey: String) {
+    @objc public init(
+        endpoint: String,
+        headers: Dictionary<String, String>? = nil
+    ) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
-        guard !apiKey.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            fatalError("API key is missing or empty")
+        let headerTuples = headers?.compactMap { dict -> (String, String)? in
+            return (dict.key, dict.value)
         }
         
         self.httpMetricExporter = StableOtlpHTTPMetricExporter(
             endpoint: endpointURL,
-            envVarHeaders: [("apiKey", apiKey)]
+            config: OtlpConfiguration(
+                headers: headerTuples
+            ),
+            envVarHeaders: headerTuples
         )
     }
 }
