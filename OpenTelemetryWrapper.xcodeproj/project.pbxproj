@@ -7,29 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E31B39CF2C948C52003343CB /* OpenTelemetryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39B52C948C51003343CB /* OpenTelemetryWrapper.swift */; };
-		E31B39D02C948C52003343CB /* HttpLogExporterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39B62C948C51003343CB /* HttpLogExporterWrapper.swift */; };
-		E31B39D12C948C52003343CB /* LoggerProviderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39B72C948C51003343CB /* LoggerProviderWrapper.swift */; };
-		E31B39D22C948C52003343CB /* LoggerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39B82C948C51003343CB /* LoggerWrapper.swift */; };
-		E31B39D32C948C52003343CB /* LogProcessorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39B92C948C51003343CB /* LogProcessorWrapper.swift */; };
-		E31B39D42C948C52003343CB /* CounterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39BB2C948C51003343CB /* CounterWrapper.swift */; };
-		E31B39D52C948C52003343CB /* GaugeWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39BC2C948C51003343CB /* GaugeWrapper.swift */; };
-		E31B39D62C948C52003343CB /* HistogramWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39BD2C948C51003343CB /* HistogramWrapper.swift */; };
-		E31B39D72C948C52003343CB /* HttpMetricExporterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39BE2C948C51003343CB /* HttpMetricExporterWrapper.swift */; };
-		E31B39D82C948C52003343CB /* MeterProviderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39BF2C948C51003343CB /* MeterProviderWrapper.swift */; };
-		E31B39D92C948C52003343CB /* MeterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39C02C948C51003343CB /* MeterWrapper.swift */; };
-		E31B39DA2C948C52003343CB /* MetricReaderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39C12C948C51003343CB /* MetricReaderWrapper.swift */; };
-		E31B39DB2C948C52003343CB /* UpDownCounterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39C22C948C51003343CB /* UpDownCounterWrapper.swift */; };
-		E31B39DC2C948C52003343CB /* SemanticAttributesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39C42C948C51003343CB /* SemanticAttributesWrapper.swift */; };
-		E31B39DD2C948C52003343CB /* SeverityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39C52C948C51003343CB /* SeverityWrapper.swift */; };
-		E31B39DE2C948C52003343CB /* HttpSpanExporterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39C62C948C51003343CB /* HttpSpanExporterWrapper.swift */; };
-		E31B39DF2C948C52003343CB /* SpanProcessorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39C72C948C51003343CB /* SpanProcessorWrapper.swift */; };
-		E31B39E02C948C52003343CB /* SpanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39C82C948C51003343CB /* SpanWrapper.swift */; };
-		E31B39E12C948C52003343CB /* StdOutSpanExporterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39C92C948C51003343CB /* StdOutSpanExporterWrapper.swift */; };
-		E31B39E22C948C52003343CB /* TracerProviderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39CA2C948C51003343CB /* TracerProviderWrapper.swift */; };
-		E31B39E32C948C52003343CB /* TracerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39CB2C948C51003343CB /* TracerWrapper.swift */; };
-		E31B39E42C948C52003343CB /* ResourceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39CD2C948C51003343CB /* ResourceWrapper.swift */; };
-		E31B39E52C948C52003343CB /* ContextPropagatorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B39CE2C948C51003343CB /* ContextPropagatorWrapper.swift */; };
 		E387FD742CFF05CB009BE704 /* OTelSwiftLog in Frameworks */ = {isa = PBXBuildFile; productRef = E387FD732CFF05CB009BE704 /* OTelSwiftLog */; };
 		E387FD762CFF05CB009BE704 /* OpenTelemetryApi in Frameworks */ = {isa = PBXBuildFile; productRef = E387FD752CFF05CB009BE704 /* OpenTelemetryApi */; };
 		E387FD782CFF05CB009BE704 /* OpenTelemetryProtocolExporterHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = E387FD772CFF05CB009BE704 /* OpenTelemetryProtocolExporterHTTP */; };
@@ -40,29 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E31B39B52C948C51003343CB /* OpenTelemetryWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTelemetryWrapper.swift; sourceTree = "<group>"; };
-		E31B39B62C948C51003343CB /* HttpLogExporterWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpLogExporterWrapper.swift; sourceTree = "<group>"; };
-		E31B39B72C948C51003343CB /* LoggerProviderWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerProviderWrapper.swift; sourceTree = "<group>"; };
-		E31B39B82C948C51003343CB /* LoggerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerWrapper.swift; sourceTree = "<group>"; };
-		E31B39B92C948C51003343CB /* LogProcessorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogProcessorWrapper.swift; sourceTree = "<group>"; };
-		E31B39BB2C948C51003343CB /* CounterWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterWrapper.swift; sourceTree = "<group>"; };
-		E31B39BC2C948C51003343CB /* GaugeWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeWrapper.swift; sourceTree = "<group>"; };
-		E31B39BD2C948C51003343CB /* HistogramWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistogramWrapper.swift; sourceTree = "<group>"; };
-		E31B39BE2C948C51003343CB /* HttpMetricExporterWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMetricExporterWrapper.swift; sourceTree = "<group>"; };
-		E31B39BF2C948C51003343CB /* MeterProviderWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterProviderWrapper.swift; sourceTree = "<group>"; };
-		E31B39C02C948C51003343CB /* MeterWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterWrapper.swift; sourceTree = "<group>"; };
-		E31B39C12C948C51003343CB /* MetricReaderWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricReaderWrapper.swift; sourceTree = "<group>"; };
-		E31B39C22C948C51003343CB /* UpDownCounterWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpDownCounterWrapper.swift; sourceTree = "<group>"; };
-		E31B39C42C948C51003343CB /* SemanticAttributesWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticAttributesWrapper.swift; sourceTree = "<group>"; };
-		E31B39C52C948C51003343CB /* SeverityWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeverityWrapper.swift; sourceTree = "<group>"; };
-		E31B39C62C948C51003343CB /* HttpSpanExporterWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpSpanExporterWrapper.swift; sourceTree = "<group>"; };
-		E31B39C72C948C51003343CB /* SpanProcessorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpanProcessorWrapper.swift; sourceTree = "<group>"; };
-		E31B39C82C948C51003343CB /* SpanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpanWrapper.swift; sourceTree = "<group>"; };
-		E31B39C92C948C51003343CB /* StdOutSpanExporterWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StdOutSpanExporterWrapper.swift; sourceTree = "<group>"; };
-		E31B39CA2C948C51003343CB /* TracerProviderWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracerProviderWrapper.swift; sourceTree = "<group>"; };
-		E31B39CB2C948C51003343CB /* TracerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracerWrapper.swift; sourceTree = "<group>"; };
-		E31B39CD2C948C51003343CB /* ResourceWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceWrapper.swift; sourceTree = "<group>"; };
-		E31B39CE2C948C51003343CB /* ContextPropagatorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextPropagatorWrapper.swift; sourceTree = "<group>"; };
 		E34125192C9082CD00E5AC5E /* OpenTelemetryWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenTelemetryWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E38774782D08AC4200C96EB7 /* OpenTelemetryWrapper */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OpenTelemetryWrapper; sourceTree = "<group>"; };
 		E3EB325C2CF5DDCD00985F89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -86,45 +40,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E31B39BA2C948C51003343CB /* logs */ = {
-			isa = PBXGroup;
-			children = (
-				E31B39B62C948C51003343CB /* HttpLogExporterWrapper.swift */,
-				E31B39B72C948C51003343CB /* LoggerProviderWrapper.swift */,
-				E31B39B82C948C51003343CB /* LoggerWrapper.swift */,
-				E31B39B92C948C51003343CB /* LogProcessorWrapper.swift */,
-			);
-			path = logs;
-			sourceTree = "<group>";
-		};
-		E31B39C32C948C51003343CB /* metrics */ = {
-			isa = PBXGroup;
-			children = (
-				E31B39BB2C948C51003343CB /* CounterWrapper.swift */,
-				E31B39BC2C948C51003343CB /* GaugeWrapper.swift */,
-				E31B39BD2C948C51003343CB /* HistogramWrapper.swift */,
-				E31B39BE2C948C51003343CB /* HttpMetricExporterWrapper.swift */,
-				E31B39BF2C948C51003343CB /* MeterProviderWrapper.swift */,
-				E31B39C02C948C51003343CB /* MeterWrapper.swift */,
-				E31B39C12C948C51003343CB /* MetricReaderWrapper.swift */,
-				E31B39C22C948C51003343CB /* UpDownCounterWrapper.swift */,
-			);
-			path = metrics;
-			sourceTree = "<group>";
-		};
-		E31B39CC2C948C51003343CB /* traces */ = {
-			isa = PBXGroup;
-			children = (
-				E31B39C62C948C51003343CB /* HttpSpanExporterWrapper.swift */,
-				E31B39C72C948C51003343CB /* SpanProcessorWrapper.swift */,
-				E31B39C82C948C51003343CB /* SpanWrapper.swift */,
-				E31B39C92C948C51003343CB /* StdOutSpanExporterWrapper.swift */,
-				E31B39CA2C948C51003343CB /* TracerProviderWrapper.swift */,
-				E31B39CB2C948C51003343CB /* TracerWrapper.swift */,
-			);
-			path = traces;
-			sourceTree = "<group>";
-		};
 		E33DF41C2C92E8FD00BB11F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				E38774782D08AC4200C96EB7 /* OpenTelemetryWrapper */,
-				E341251B2C9082CD00E5AC5E /* Sources */,
 				E341251A2C9082CD00E5AC5E /* Products */,
 				E33DF41C2C92E8FD00BB11F6 /* Frameworks */,
 			);
@@ -149,21 +63,6 @@
 				E34125192C9082CD00E5AC5E /* OpenTelemetryWrapper.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E341251B2C9082CD00E5AC5E /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				E31B39CE2C948C51003343CB /* ContextPropagatorWrapper.swift */,
-				E31B39BA2C948C51003343CB /* logs */,
-				E31B39C32C948C51003343CB /* metrics */,
-				E31B39B52C948C51003343CB /* OpenTelemetryWrapper.swift */,
-				E31B39CD2C948C51003343CB /* ResourceWrapper.swift */,
-				E31B39C42C948C51003343CB /* SemanticAttributesWrapper.swift */,
-				E31B39C52C948C51003343CB /* SeverityWrapper.swift */,
-				E31B39CC2C948C51003343CB /* traces */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,29 +155,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E31B39D92C948C52003343CB /* MeterWrapper.swift in Sources */,
-				E31B39D62C948C52003343CB /* HistogramWrapper.swift in Sources */,
-				E31B39DF2C948C52003343CB /* SpanProcessorWrapper.swift in Sources */,
-				E31B39D12C948C52003343CB /* LoggerProviderWrapper.swift in Sources */,
-				E31B39D72C948C52003343CB /* HttpMetricExporterWrapper.swift in Sources */,
-				E31B39E02C948C52003343CB /* SpanWrapper.swift in Sources */,
-				E31B39DE2C948C52003343CB /* HttpSpanExporterWrapper.swift in Sources */,
-				E31B39E42C948C52003343CB /* ResourceWrapper.swift in Sources */,
-				E31B39DC2C948C52003343CB /* SemanticAttributesWrapper.swift in Sources */,
-				E31B39DB2C948C52003343CB /* UpDownCounterWrapper.swift in Sources */,
-				E31B39DD2C948C52003343CB /* SeverityWrapper.swift in Sources */,
-				E31B39D32C948C52003343CB /* LogProcessorWrapper.swift in Sources */,
-				E31B39D42C948C52003343CB /* CounterWrapper.swift in Sources */,
-				E31B39E52C948C52003343CB /* ContextPropagatorWrapper.swift in Sources */,
-				E31B39CF2C948C52003343CB /* OpenTelemetryWrapper.swift in Sources */,
-				E31B39D52C948C52003343CB /* GaugeWrapper.swift in Sources */,
-				E31B39DA2C948C52003343CB /* MetricReaderWrapper.swift in Sources */,
-				E31B39E12C948C52003343CB /* StdOutSpanExporterWrapper.swift in Sources */,
-				E31B39D02C948C52003343CB /* HttpLogExporterWrapper.swift in Sources */,
-				E31B39E32C948C52003343CB /* TracerWrapper.swift in Sources */,
-				E31B39D82C948C52003343CB /* MeterProviderWrapper.swift in Sources */,
-				E31B39D22C948C52003343CB /* LoggerWrapper.swift in Sources */,
-				E31B39E22C948C52003343CB /* TracerProviderWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
