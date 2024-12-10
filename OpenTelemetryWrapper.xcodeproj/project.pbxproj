@@ -64,6 +64,7 @@
 		E31B39CD2C948C51003343CB /* ResourceWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceWrapper.swift; sourceTree = "<group>"; };
 		E31B39CE2C948C51003343CB /* ContextPropagatorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextPropagatorWrapper.swift; sourceTree = "<group>"; };
 		E34125192C9082CD00E5AC5E /* OpenTelemetryWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenTelemetryWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E38774782D08AC4200C96EB7 /* OpenTelemetryWrapper */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OpenTelemetryWrapper; sourceTree = "<group>"; };
 		E3EB325C2CF5DDCD00985F89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +136,7 @@
 		E341250F2C9082CD00E5AC5E = {
 			isa = PBXGroup;
 			children = (
+				E38774782D08AC4200C96EB7 /* OpenTelemetryWrapper */,
 				E341251B2C9082CD00E5AC5E /* Sources */,
 				E341251A2C9082CD00E5AC5E /* Products */,
 				E33DF41C2C92E8FD00BB11F6 /* Frameworks */,
