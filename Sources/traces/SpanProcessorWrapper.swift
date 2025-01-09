@@ -30,13 +30,13 @@ import OpenTelemetrySdk
         httpSpanExporter: HttpSpanExporterWrapper,
         stdOutSpanExporter: StdOutSpanExporterWrapper
     ) {
-        /*let httpSpanProcessor = BatchSpanProcessor(
+        let httpSpanProcessor = BatchSpanProcessor(
             spanExporter: httpSpanExporter.httpSpanExporter,
             scheduleDelay: 5
-        )*/
+        )
         let stdOutSpanProcessor = BatchSpanProcessor(
             spanExporter: stdOutSpanExporter.stdOutExporter,
             scheduleDelay: 5
         )
-        self.spanProcessor = MultiSpanProcessor(spanProcessors: [/*httpSpanProcessor, */stdOutSpanProcessor])
+        self.spanProcessor = MultiSpanProcessor(spanProcessors: [httpSpanProcessor, stdOutSpanProcessor])
     }}

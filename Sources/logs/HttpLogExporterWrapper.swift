@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//import OpenTelemetryProtocolExporterHttp
+import OpenTelemetryProtocolExporterHttp
 
 /// `HttpLogExporterWrapper` is a class that wraps the `OtlpHttpLogExporter` to expose it to Objective-C code.
 ///
@@ -32,7 +32,7 @@ import Foundation
 @objc public class HttpLogExporterWrapper: NSObject {
     
     /// The underlying instance of `OtlpHttpLogExporter` responsible for exporting logs over HTTP.
-    //let httpLogExporter: OtlpHttpLogExporter
+    let httpLogExporter: OtlpHttpLogExporter
     
     /// Initializes a new instance of `HttpLogExporterWrapper` with the specified endpoint URL.
     ///
@@ -43,6 +43,6 @@ import Foundation
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
-        //self.httpLogExporter = OtlpHttpLogExporter(endpoint: endpointURL)
+        self.httpLogExporter = OtlpHttpLogExporter(endpoint: endpointURL)
     }
 }

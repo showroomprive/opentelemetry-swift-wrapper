@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//import OpenTelemetryProtocolExporterHttp
+import OpenTelemetryProtocolExporterHttp
 
 /// A wrapper class for the `StableOtlpHTTPMetricExporter`, exposing it to Objective-C.
 ///
@@ -16,7 +16,7 @@ import Foundation
 @objc public class HttpMetricExporterWrapper: NSObject {
     
     /// The underlying `StableOtlpHTTPMetricExporter` instance responsible for exporting metrics over HTTP.
-    //let httpMetricExporter: StableOtlpHTTPMetricExporter
+    let httpMetricExporter: StableOtlpHTTPMetricExporter
     
     /// Initializes a new `HttpMetricExporterWrapper` instance with the specified endpoint URL.
     ///
@@ -30,6 +30,6 @@ import Foundation
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
-        //self.httpMetricExporter = StableOtlpHTTPMetricExporter(endpoint: endpointURL)
+        self.httpMetricExporter = StableOtlpHTTPMetricExporter(endpoint: endpointURL)
     }
 }
