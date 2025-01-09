@@ -44,7 +44,7 @@ import OpenTelemetrySdk
     ///   - logProcessor: An instance of `LogProcessorWrapper` that handles the processing and exporting of logs.
     @objc public init(resource: ResourceWrapper, logProcessor: LogProcessorWrapper) {
         self.loggerProvider = LoggerProviderBuilder()
-            .with(processors: [logProcessor.logProcessor])
+            //.with(processors: [logProcessor.logProcessor])
             .with(resource: resource.resource)
             .with(logLimits: LogLimits(maxAttributeLength: 256))
             .build()

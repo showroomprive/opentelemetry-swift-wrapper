@@ -30,15 +30,15 @@ import OpenTelemetrySdk
 @objc public class LogProcessorWrapper: NSObject {
     
     /// The underlying `LogRecordProcessor` instance that handles the processing and exporting of log records.
-    let logProcessor: LogRecordProcessor
+    //let logProcessor: LogRecordProcessor
     
     /// Initializes a new instance of `LogProcessorWrapper` with the provided `HttpLogExporterWrapper`.
     ///
     /// - Parameter httpLogExporter: An instance of `HttpLogExporterWrapper` that defines the endpoint for exporting logs.
     @objc public init(httpLogExporter: HttpLogExporterWrapper) {
-        self.logProcessor = BatchLogRecordProcessor(
+        /*self.logProcessor = BatchLogRecordProcessor(
             logRecordExporter: httpLogExporter.httpLogExporter,
             scheduleDelay: 5
-        )
+        )*/
     }
 }

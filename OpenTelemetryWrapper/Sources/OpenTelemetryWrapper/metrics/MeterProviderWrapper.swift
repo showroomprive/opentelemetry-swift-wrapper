@@ -32,7 +32,7 @@ import OpenTelemetrySdk
     ) {
         self.meterProvider = StableMeterProviderBuilder()
             .registerView(selector: InstrumentSelector.builder().setInstrument(name: ".*").build(), view: StableView.builder().build())
-            .registerMetricReader(reader: metricReader.metricReader)
+            //.registerMetricReader(reader: metricReader.metricReader)
             .setResource(resource: resource.resource)
             .build()
     }

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import OpenTelemetryProtocolExporterHttp
+//import OpenTelemetryProtocolExporterHttp
 import StdoutExporter
 
 /// A wrapper class providing access to the OtlpHttpTraceExporter for exporting spans in Objective-C.
@@ -15,7 +15,7 @@ import StdoutExporter
 @objc public class HttpSpanExporterWrapper: NSObject {
     
     /// The underlying OtlpHttpTraceExporter instance, responsible for sending span data to the configured HTTP endpoint.
-    let httpSpanExporter: OtlpHttpTraceExporter
+    //let httpSpanExporter: OtlpHttpTraceExporter
     
     /// Initializes a new instance of the HttpSpanExporterWrapper with the specified endpoint.
     ///
@@ -27,6 +27,6 @@ import StdoutExporter
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
-        self.httpSpanExporter = OtlpHttpTraceExporter(endpoint: endpointURL)
+        //self.httpSpanExporter = OtlpHttpTraceExporter(endpoint: endpointURL)
     }
 }

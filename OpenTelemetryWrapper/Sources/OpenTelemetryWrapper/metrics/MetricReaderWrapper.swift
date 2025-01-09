@@ -16,7 +16,7 @@ import OpenTelemetrySdk
 @objc public class MetricReaderWrapper: NSObject {
     
     /// The underlying `StableMetricReader` instance responsible for reading and exporting metrics.
-    let metricReader: StableMetricReader
+    //let metricReader: StableMetricReader
     
     /// Initializes a new `MetricReaderWrapper` instance with the specified HTTP metric exporter.
     ///
@@ -29,8 +29,8 @@ import OpenTelemetrySdk
     @objc public init(
         metricExporter: HttpMetricExporterWrapper
     ) {
-        self.metricReader = StablePeriodicMetricReaderBuilder(exporter: metricExporter.httpMetricExporter)
+        /*self.metricReader = StablePeriodicMetricReaderBuilder(exporter: metricExporter.httpMetricExporter)
             .setInterval(timeInterval: 5)
-            .build()
+            .build()*/
     }
 }
