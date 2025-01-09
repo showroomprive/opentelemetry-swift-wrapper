@@ -1,5 +1,4 @@
 .DS_Store
 xcuserdata*
-
-
-release/*
+.swiftpm
+Package.resolved
