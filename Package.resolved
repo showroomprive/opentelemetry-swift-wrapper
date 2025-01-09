@@ -12,7 +12,7 @@
     {
       "identity" : "opentelemetry-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/open-telemetry/opentelemetry-swift",
+      "location" : "https://github.com/open-telemetry/opentelemetry-swift.git",
       "state" : {
         "revision" : "8da9ef4a380d324235dd9ccd8dbb5735a5943978",
         "version" : "1.11.0"
