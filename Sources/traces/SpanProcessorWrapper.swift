@@ -28,15 +28,16 @@ import OpenTelemetrySdk
     /// - Note: The BatchSpanProcessors are configured with a schedule delay of 5 seconds, meaning spans will be batched and exported every 5 seconds, optimizing network and I/O operations.
     @objc public init(
         httpSpanExporter: HttpSpanExporterWrapper,
-        stdOutSpanExporter: StdOutSpanExporterWrapper
+        stdOutSpanExporter: StdOutSpanExporterWrapper,
+        scheduleDelay: Int
     ) {
         let httpSpanProcessor = BatchSpanProcessor(
             spanExporter: httpSpanExporter.httpSpanExporter,
-            scheduleDelay: 5
+            scheduleDelay: TimeInterval(scheduleDelay)
         )
         let stdOutSpanProcessor = BatchSpanProcessor(
             spanExporter: stdOutSpanExporter.stdOutExporter,
-            scheduleDelay: 5
+            scheduleDelay: TimeInterval(scheduleDelay)
         )
         self.spanProcessor = MultiSpanProcessor(spanProcessors: [httpSpanProcessor, stdOutSpanProcessor])
     }}

@@ -29,9 +29,12 @@ import OpenTelemetrySdk
         serviceName: String,
         serviceVersion: String
     ) {
-        self.resource = Resource(attributes: [
+        
+        let customResource = Resource(attributes: [
             ResourceAttributes.serviceName.rawValue : AttributeValue.string(serviceName),
             ResourceAttributes.serviceVersion.rawValue : AttributeValue.string(serviceVersion)
         ])
+        
+        self.resource = Resource().merging(other: customResource)
     }
 }

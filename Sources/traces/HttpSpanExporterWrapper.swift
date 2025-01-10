@@ -7,6 +7,7 @@
 
 import Foundation
 import OpenTelemetryProtocolExporterHttp
+import OpenTelemetryProtocolExporterCommon
 import StdoutExporter
 
 /// A wrapper class providing access to the OtlpHttpTraceExporter for exporting spans in Objective-C.
@@ -20,13 +21,26 @@ import StdoutExporter
     /// Initializes a new instance of the HttpSpanExporterWrapper with the specified endpoint.
     ///
     /// - Parameter endpoint: The URL string of the HTTP endpoint to export spans to. This endpoint should be configured to receive and process OpenTelemetry span data.
-    ////// - Throws: A fatal error if the provided endpoint string is not a valid URL, preventing the exporter from being initialized correctly.
-    @objc public init(endpoint: String
+    ///
+    /// - Important: This initializer will cause a fatal error if the provided endpoint string is invalid.
+    @objc public init(
+        endpoint: String,
+        headers: Dictionary<String, String>? = nil
     ) {
         guard let endpointURL = URL(string: endpoint) else {
             fatalError("Invalid endpoint URL: \(endpoint)")
         }
         
-        self.httpSpanExporter = OtlpHttpTraceExporter(endpoint: endpointURL)
+        let headerTuples = headers?.compactMap { dict -> (String, String)? in
+            return (dict.key, dict.value)
+        }
+        
+        self.httpSpanExporter = OtlpHttpTraceExporter(
+            endpoint: endpointURL,
+            config: OtlpConfiguration(
+                headers: headerTuples
+            ),
+            envVarHeaders: headerTuples
+        )
     }
 }

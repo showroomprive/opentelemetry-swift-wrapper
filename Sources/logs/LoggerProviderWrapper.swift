@@ -46,7 +46,6 @@ import OpenTelemetrySdk
         self.loggerProvider = LoggerProviderBuilder()
             .with(processors: [logProcessor.logProcessor])
             .with(resource: resource.resource)
-            .with(logLimits: LogLimits(maxAttributeLength: 256))
             .build()
     }
 }
