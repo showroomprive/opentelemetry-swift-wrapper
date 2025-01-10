@@ -19,9 +19,7 @@ import StdoutExporter
     /// Initializes a new instance of the StdOutSpanExporterWrapper, creating a StdoutSpanExporter that will output span data to the console.
     ///
     /// - Note: This initializer sets up the StdoutSpanExporter, enabling immediate visibility of span data during development andtesting, facilitating the identification and resolution of potential tracing issues.
-    @objc public init(
-        isDebug: Bool
-    ) {
+    @objc public init(isDebug: Bool) {
         self.stdOutExporter = StdoutSpanExporter(isDebug: isDebug)
     }
 }

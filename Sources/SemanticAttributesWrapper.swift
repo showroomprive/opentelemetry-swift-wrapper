@@ -5,6 +5,7 @@
 //  Created by Alexis BURGOS on 17/07/2024.
 //
 
+import Foundation
 import OpenTelemetryApi
 
 /// A Swift enumeration that provides Objective-C compatible access to common OpenTelemetry semantic attributes.
