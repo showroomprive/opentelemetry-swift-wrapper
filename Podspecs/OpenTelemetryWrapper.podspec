@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name                      = 'OpenTelemetryWrapper'
-	s.version                   = '2.0.0'
+	s.version                   = '2.1.0'
 	s.summary                   = 'OpenTelemetry Swift wrappers with Objective-C compatibility'
 	s.description               = 'Swift wrappers to expose the OpenTelemetry Swift SDK to KMP with Objective-C annotations'
 
