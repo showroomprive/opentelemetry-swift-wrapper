@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name                      = 'OpenTelemetryWrapper'
-	s.version                   = '2.1.0'
+	s.version                   = '2.2.0'
 	s.summary                   = 'OpenTelemetry Swift wrappers with Objective-C compatibility'
 	s.description               = 'Swift wrappers to expose the OpenTelemetry Swift SDK to KMP with Objective-C annotations'
 
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 	s.author                    = { 'alexis-burgos' => 'alexis.burgos@showroomprive.net' }
 
 	# This URL should still remain on a public repository, until another pod consumption system is used
-	s.source                    = { :git => 'https://github.com/showroomprive/opentelemetry-swift-wrapper.git', :tag => s.version.to_s }
+	s.source                    = { :git => 'https://github.com/showroomprive/opentelemetry-swift-wrapper.git', :branch => "TTF-4722_missing-implementation" }
     
     s.ios.deployment_target     = '14.0'
     s.swift_versions            = '5.9'
