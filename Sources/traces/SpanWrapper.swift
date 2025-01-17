@@ -11,7 +11,8 @@ import OpenTelemetrySdk
 
 /// A wrapper class providing a simplified interface for interacting with OpenTelemetry Spans in Objective-C.
 ///
-/// This class allows you to create, manage, and end spans, as well as set attributes andadd events, bridging the gap between the OpenTelemetry Swift API and Objective-C applications, enabling seamless integration of distributed tracing capabilities.
+/// This class allows you to create, manage, and end spans, as well as set attributes and add events, bridging the gap between the OpenTelemetry Swift API and Objective-C applications.
+/// It enables seamless integration of distributed tracing capabilities.
 @objc public class SpanWrapper: NSObject {
     
     /// The underlying OpenTelemetry Span instance, representing a single operation within a trace, capturing timing information and associated metadata.
@@ -20,7 +21,7 @@ import OpenTelemetrySdk
     /// Initializes a new SpanWrapper and starts a new span, representing a unit of work in a distributed trace.
     ///
     /// - Parameters:
-    ///   - tracerWrapper: The TracerWrapper used to create the span, providing access to the underlying OpenTelemetrytracer.
+    ///   - tracerWrapper: The TracerWrapper used to create the span, providing access to the underlying OpenTelemetry tracer.
     ///   - name: The name of the span, providing a descriptive label for the operation being traced.
     ///   - parentSpan: An optional parent SpanWrapper, if this span is a child span, establishing the hierarchical relationship within the trace.
     ///
@@ -118,11 +119,29 @@ import OpenTelemetrySdk
     /// - Parameters:
     ///   - name: The name of the event, providing a descriptive label for the event being recorded.
     ///   - timestamp: An optional timestamp for the event (NSDate), allowing for precise timing of events within the span. If not provided, the current time is used.
-    @objc public func addEvent(name: String, timestamp: NSDate? = nil) {if let timestamp = timestamp {
-        span.addEvent(name: name, timestamp: timestamp as Date)
-    } else {
-        span.addEvent(name: name)
+    @objc public func addEvent(name: String, timestamp: NSDate? = nil) {
+        if let timestamp = timestamp {
+            span.addEvent(name: name, timestamp: timestamp as Date)
+        } else {
+            span.addEvent(name: name)
+        }
     }
+    
+    /// Sets the status of the span, marking it with an HTTP status code and reason.
+    ///
+    /// - Parameters:
+    ///   - code: The HTTP status code representing the status of the span.
+    ///   - reason: The reason or description associated with the status code.
+    @objc public func setStatus(code: Int, reason: String) {
+        span.putHttpStatusCode(statusCode: code, reasonPhrase: reason)
+    }
+    
+    /// Records an exception on the span, capturing the error details.
+    ///
+    /// - Parameters:
+    ///   - error: The NSError object representing the exception to be recorded.
+    @objc public func recordException(error: NSError) {
+        span.recordException(error)
     }
     
     /// Ends the span, marking the completion of the operation being traced and signaling that the span data is ready for processing and export.
