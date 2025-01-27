@@ -31,7 +31,7 @@ When working with Kotlin Multiplatform projects:
 Add the following to your `Podfile`:
 
 ```ruby
-pod 'OpenTelemetryWrapper', '~> 1.0'
+pod 'OpenTelemetryWrapper', '~> 2.0'
 ```
 
 ### Swift Package Manager
@@ -40,19 +40,18 @@ While this wrapper is primarily intended for CocoaPods use in KMP projects, it's
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/showroomprive/opentelemetry-swift-wrapper.git", from: "1.0.0")
+    .package(url: "https://github.com/showroomprive/opentelemetry-swift-wrapper.git", from: "2.0.0")
 ]
 ```
 
 ## Project Structure
 
-The project is organized into several modules:
+The source code is organized in the following structure:
 
-- `Sources/`
-- `Tracing/`: Components for distributed tracing
-- `Metrics/`: Metrics collection and export
-- `Logging/`: Structured logging implementation
-- `Common/`: Shared utilities and protocols
+- `Sources`
+- `metrics`: Handles the collection and export of various metrics.
+- `traces`: Manages distributed tracing functionalities.
+- `logs`: Provides structured logging capabilities.
 
 ## Usage
 
