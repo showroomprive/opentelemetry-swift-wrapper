@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "OpenTelemetryWrapper", targets: ["OpenTelemetryWrapper"])
     ],
     dependencies: [
-        .package(url: "https://github.com/open-telemetry/opentelemetry-swift.git", exact: "1.11.0")
+        .package(url: "https://github.com/open-telemetry/opentelemetry-swift.git", exact: "1.13.0")
     ],
     targets: [
         .target(
